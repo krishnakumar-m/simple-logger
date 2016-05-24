@@ -1,3 +1,3 @@
 # simple-logger
 A simple logger for my mobile browser. 
-Maynot be of big use.
+May not be of big use. Dependency : newElm.js
