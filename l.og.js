@@ -7,12 +7,18 @@ ert : function(msg) {
 },
 og : function(msg) {
 if(l.enable) {
-	showMsg(msg);
+	this.showMsg(msg);
  }
+},
+clear : function() {
+  var logdiv = document.getElementById('log-div');
+   var msgs = logdiv.getElementsByTagName('pre');
+// NodeList so fix like this
+while(msgs[0]) { 
+logdiv.removeChild(msgs[0]);
 }
-};
-
-function showMsg(msg) {
+},
+showMsg : function(msg) {
  var msgObj = {
  	type : 'pre',
   content : msg
@@ -50,12 +56,7 @@ function showMsg(msg) {
   });
   
     document.getElementById('log-clear').addEventListener('click',function(){
-   var logdiv = document.getElementById('log-div');
-   var msgs = logdiv.getElementsByTagName('pre');
-// NodeList so fix like this
-while(msgs[0]) { 
-logdiv.removeChild(msgs[0]);
-}
+ l.clear();
   });
   
     document.getElementById('log-min').addEventListener('click',function(){
@@ -69,3 +70,4 @@ logdiv.removeChild(msgs[0]);
 element.scrollTop = element.scrollHeight;
  
 }
+};
