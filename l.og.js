@@ -12,10 +12,12 @@ if(l.enable) {
 },
 clear : function() {
   var logdiv = document.getElementById('log-div');
+  if(logdiv) {
    var msgs = logdiv.getElementsByTagName('pre');
 // NodeList so fix like this
 while(msgs[0]) { 
 logdiv.removeChild(msgs[0]);
+}
 }
 },
 showMsg : function(msg) {
